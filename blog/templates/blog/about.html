@@ -1,15 +1,6 @@
 {% extends "base.html" %}
-
-{% block title %}
-About| My Blog
-{% endblock title %}
-
+{% block title %}About | My Blog{% endblock %}
 {% block content %}
-<h1>Hello, {{ name }}!</h1>
-{% if name|length > 10 %}
-    <p>Wow, what a long name.</p>
-
-{% else %}
-    <p>Nice to meet you.</p>
-{% endif %}
-{% endblock content %}
+<h1>About</h1>
+<p>This blog is my Django practice project.</p>
+{% endblock %}

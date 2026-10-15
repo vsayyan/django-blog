@@ -14,7 +14,7 @@ POSTS= [
 
 # Create your views here.
 def home(request):
-    posts = [post for post in posts if post["published"]]
+    posts = [post for post in POSTS if post["published"]]
     return render(request, "blog/home.html", {"posts":posts})
 
 def post_detail(request,post_id):
