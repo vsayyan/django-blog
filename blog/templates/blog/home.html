@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block title %}Home | My Blog{% endblock %}
+
+{% block content %}
+    <h1>Welcome to my blog!</h1>
+    <p>Posts: {{ posts|length }}</p>
+    {% for post in posts %}
+        <article>
+            <h2><a href="{% url 'post_detail' post.id %}">{{ post.title }}</a></h2>
+            <p class="meta">by {{post.author}}</p>
+            <p>{{ post.body|truncatechars:30 }}</p>
+        </article>
+    {% empty %}
+        <p>No posts yet.</p>
+    {% endfor %}
+{% endblock %}
