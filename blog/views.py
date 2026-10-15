@@ -13,3 +13,8 @@ def hello(request, name):
 def status(request):
     return JsonResponse({"status": "ok", "site": "my blog"})
 
+def contact(request):
+    return HttpResponse("Contact us: hello@example.com")
+
+def add(request,a,b):
+    return JsonResponse({"result": a + b})
