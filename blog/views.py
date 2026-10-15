@@ -1,9 +1,9 @@
-from django.http import Http404, JsonResponse
+from django.http import Http404,HttpResponse, JsonResponse
 from django.shortcuts import render
 
 POSTS= [
     {"id":1,"title":"My First post", "author":"Vahe",
-     "body":"Todya I started learning Django.","published":True
+     "body":"Today I started learning Django.","published":True
      },
     {"id":2,"title": "Templates are cool","author":"Vahe",
      "body":"Now my pages are real HTML.", "published": True
@@ -17,11 +17,11 @@ def home(request):
     posts = [post for post in POSTS if post["published"]]
     return render(request, "blog/home.html", {"posts":posts})
 
-def post_detail(request,post_id):
+def post_detail(request, post_id):
     for post in POSTS:
         if post["id"] == post_id and post["published"]:
-            return render(request,"blog/post_detail.html", {"post":post})
-        raise Http404("Postnot found")
+               return render(request, "blog/post_detail.html", {"post": post})
+    raise Http404("Post not found")
 
 def about(request):
     return render(request,"blog/about.html")

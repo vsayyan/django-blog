@@ -7,7 +7,7 @@
     <p>Posts: {{ posts|length }}</p>
     {% for post in posts %}
         <article>
-            <h2><a href="{% url 'post_detail' post.id %}">{{ post.title }}</h2>
+            <h2><a href="{% url 'post_detail' post.id %}">{{ post.title }}</a></h2>
             <p class="meta">by {{post.author}}</p>
             <p>{{ post.body|truncatechars:30 }}</p>
         </article>
